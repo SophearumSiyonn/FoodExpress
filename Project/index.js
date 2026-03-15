@@ -16,6 +16,10 @@ app.get('/orders', (req, res) => {
     res.send('Orders API');
 });
 
+app.put('/updateprofile', (req, res) => {
+    res.send('INSIDE UPDATE PROFILE API');
+});
+
 app.listen(5001, () => {
     console.log('Server running on port 5001');
 });
