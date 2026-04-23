@@ -123,7 +123,7 @@ resource "aws_launch_template" "app_lt" {
 
     rm -rf /home/ubuntu/app
     git clone ${var.repo_url} /home/ubuntu/app
-    cd /home/ubuntu/app
+    cd /home/ubuntu/app/Project
 
     docker build -t ${var.image_name} .
     docker rm -f deploy-app || true
