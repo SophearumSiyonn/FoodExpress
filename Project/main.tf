@@ -22,9 +22,9 @@ variable "image_name" {
   default     = "foodexpress-app:latest"
 }
 
-resource "aws_key_pair" "labsuser" {
-  key_name   = "labsuser"
-  public_key = file("${path.module}/labsuser.pub")
+resource "aws_key_pair" "mykey" {
+  key_name   = "mykey"
+  public_key = file("${path.module}/mykey.pub")
 }
 
 resource "aws_default_vpc" "default" {}
@@ -102,7 +102,7 @@ resource "aws_launch_template" "app_lt" {
   name_prefix   = "foodexpress-launch-template-"
   image_id      = data.aws_ami.ubuntu.id
   instance_type = "t3.micro"
-  key_name      = aws_key_pair.labsuser.key_name
+  key_name      = aws_key_pair.mykey.key_name
 
   network_interfaces {
     associate_public_ip_address = true
