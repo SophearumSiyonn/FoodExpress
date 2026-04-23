@@ -205,3 +205,7 @@ resource "aws_autoscaling_policy" "cpu_policy" {
 output "website_url" {
   value = "http://${aws_lb.app_lb.dns_name}"
 }
+
+
+
+
